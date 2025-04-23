@@ -28,7 +28,7 @@ int main()
 	x = uniform_int_distribution<>(1, 30)(rand);
 	y = uniform_int_distribution<>(1, 20)(rand);
 	questions[1].q = to_string(x) + "€" + to_string(y);
-	questions[1].a = x * y;
+	questions[1].a = x / y;
 
 		//•¡G‚È®
 	x = uniform_int_distribution<>(1, 100)(rand);
