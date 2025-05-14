@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include <random>
 using namespace std;
 
@@ -13,18 +14,18 @@ struct Question
 
 int main()
 {
-	Question questions[3];
+	vector<Question> questions(3);
 
 	random_device rd;
 	mt19937 rand(rd());
 
-		//Š|‚¯Z
+	//Š|‚¯Z
 	int x = uniform_int_distribution<>(1, 30)(rand);
 	int y = uniform_int_distribution<>(1, 20)(rand);
 	questions[0].q = to_string(x) + "x" + to_string(y);
 	questions[0].a = x * y;
 
-		//Š„‚èZ
+	//Š„‚èZ
 	x = uniform_int_distribution<>(1, 30)(rand);
 	y = uniform_int_distribution<>(1, 20)(rand);
 	questions[1].q = to_string(x * y) + "€" + to_string(y);
@@ -40,6 +41,13 @@ int main()
 		to_string(w);
 	questions[2].a = x - (y + z);
 
+
+	//OŠpŒ`‚Ì–ÊÏ
+	x = uniform_int_distribution<>(1, 10)(rand);
+	y = uniform_int_distribution<>(1, 5)(rand) * 2;
+	questions.push_back({
+		"–ÊÏ" + to_string(x * y / 2) + "cm^2A’ê•Ó" + to_string(y) + "cm‚ÌOŠpŒ`‚Ì‚‚³‚ğ‹‚ß‚æB",
+		x });
 
 	cout << "[ƒŠƒNƒ‹[ƒgŒ±‘ÎôƒNƒCƒY]\n";
 
